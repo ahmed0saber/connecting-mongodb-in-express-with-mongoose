@@ -10,7 +10,7 @@ const Blog = require('./models/mySchema')
 
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', false);
-mongoose.connect('mongodb+srv://ahmed0saber:ahmed0saber@cluster0.qrdg3nu.mongodb.net/myData?retryWrites=true&w=majority')
+mongoose.connect(`mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.qrdg3nu.mongodb.net/myData?retryWrites=true&w=majority`)
     .then(() => {
         app.listen(port, () => {
             console.log(`Example app listening on http://localhost:${port}`)
